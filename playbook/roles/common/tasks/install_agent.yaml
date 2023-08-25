@@ -1,0 +1,6 @@
+
+
+https://vscode.dev/github/charlescasemiro/jenkins-php/blob/main/docker/datadog/values-clusteragent.yaml
+
+- name: Install Datadog Agent
+  command: helm install datadog-monitor -f datadog-values.yaml datadog/datadog

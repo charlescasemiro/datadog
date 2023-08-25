@@ -1,0 +1,9 @@
+helm_repository_name: datadog
+helm_repository_url: https://helm.datadoghq.com
+
+dd_api_key_name: DD_API_KEY
+dd_api_key_value: 04f912b8fa61b4de2d8b9cbd5f676150
+dd_app_key_name: DD_APP_KEY
+dd_app_key_value: 4d4285949a224854898b41000f0fb5031add228e
+
+

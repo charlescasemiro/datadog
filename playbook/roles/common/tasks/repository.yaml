@@ -1,0 +1,7 @@
+---
+- name: Add Helm Repository
+  command: helm repo add {{ helm_repository_name }} {{ helm_repository_url }}
+  ignore_errors: true
+
+- name: Update Helm 
+  command: helm repo update

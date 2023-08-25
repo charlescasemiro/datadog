@@ -1,0 +1,4 @@
+---
+- name: Add Helm Repository
+  hosts: all
+  become: yes
