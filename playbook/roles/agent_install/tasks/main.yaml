@@ -8,8 +8,17 @@
   ansible.builtin.shell: | 
     helm repo update
 
+- name: Check Secret if exists
+  kubernetes.core.k8s_info:
+    kind: Secret
+    name: datadog-secret
+  register: datadog_secret
+  when: datadog_secret.stat.exists
+
 - name: Create Secret
   command: oc create secret generic datadog-secret --from-literal api-key=${{ dd_api_key_name }} --from-literal app-key=${{ dd_app_key_name }}
+  register: datadog_secret
+  when: not datadog_secret.stat.exists
   tags: create_secret
 
 - name: Execute task only if file exists
