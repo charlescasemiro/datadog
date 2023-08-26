@@ -2,8 +2,8 @@ helm_repository_name: datadog
 helm_repository_url: https://helm.datadoghq.com
 
 dd_api_key_name: DD_API_KEY
-dd_api_key_value: 04f912b8fa61b4de2d8b9cbd5f676150
+dd_api_key_value: <api_key>
 dd_app_key_name: DD_APP_KEY
-dd_app_key_value: 4d4285949a224854898b41000f0fb5031add228e
+dd_app_key_value: <app_key>
 
 url_file_values: https://github.com/charlescasemiro/datadog/blob/f239574a19c9f486663f54ed8879d64f73795153/values-clusteragent-full.yaml
