@@ -1,5 +1,5 @@
 ---
-- name: Add Helm Repository
+- name: Installing Datadog Cluster Agent on Kubernets
   hosts: all
   become: yes
   roles:
