@@ -1,8 +1,0 @@
----
-- name: Download datadog file values.yaml
-  get_url:
-    url: "{{ url_file_values }}"
-    dest: /tmp/values-clusteragent-full.yaml
-
-- name: Install Datadog Agent
-  command: helm install datadog-monitor -f values-clusteragent-full.yaml datadog/datadog

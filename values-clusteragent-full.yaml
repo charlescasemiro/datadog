@@ -193,8 +193,8 @@ datadog:
     # @default -- /var/log/pods on Linux, C:\var\log\pods on Windows
     podLogsPath:
 
-  # datadog.expvarPort -- Specify the port to expose pprof and expvar to not interfer with the agentmetrics port from the cluster-agent, which defaults to 5000
-  expvarPort: 6000
+  ## datadog.expvarPort -- Specify the port to expose pprof and expvar to not interfer with the agentmetrics port from the cluster-agent, which defaults to 5000
+  expvarPort: '5000'
 
   ## dogstatsd configuration
   ## ref: https://docs.datadoghq.com/agent/kubernetes/dogstatsd/

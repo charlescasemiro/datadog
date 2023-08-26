@@ -1,0 +1,28 @@
+---
+- name: Add Helm Repository
+  community.kubernetes.helm_repository:
+    name: datadog
+    repo_url: https://helm.datadoghq.com
+  #command: helm repo add '{{ helm_repository_name }}' '{{ helm_repository_url }}'
+
+- name: Update Helm
+  ansible.builtin.shell: | 
+    helm repo update
+
+- name: Create Secret
+  command: oc create secret generic datadog-secret --from-literal api-key=${{ dd_api_key_name }} --from-literal app-key=${{ dd_app_key_name }}
+  tags: create_secret
+
+- name: Download datadog file values.yaml
+  get_url:
+    url: "{{ url_file_values }}"
+    dest: /tmp/values-clusteragent-full.yaml
+  tags: download_file
+
+- name: Install Datadog Agent
+  ansible.builtin.shell: | 
+    helm install datadog-monitor \
+    -f /tmp/values-clusteragent-full.yaml \
+    --set targetSystem=linux \ 
+    datadog/datadog
+  tags: install_agent
