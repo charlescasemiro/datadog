@@ -7,6 +7,12 @@ Step 1:
 >
 Step 2:
 >Setting your API Key and App Key (This stuff can find in: Organization Settings -> Access -> API KEY/APP KEY) in VARS/main.yaml
+```
+dd_api_key_name: DD_API_KEY
+dd_api_key_value: <api_key>
+dd_app_key_name: DD_APP_KEY
+dd_app_key_value: <app_key>
+```
 >
 Step 3:
 >Configure Cluster API, Username and Password of your cluster Kubernets:
