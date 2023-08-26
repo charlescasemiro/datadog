@@ -14,7 +14,7 @@
 
 - name: Execute task only if file exists
   stat:
-    path: "{{ home_user }}/{{ file_config_agent }}"
+    path: "{{ home_user }}{{ file_config_agent }}"
   register: file_status
   when: file_status.stat.exists
 
