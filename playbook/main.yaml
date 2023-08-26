@@ -1,5 +1,5 @@
 ---
-- name: Installing Datadog Cluster Agent on Kubernets
+- name: Installing Datadog Cluster Agent on Kubernets 1
   hosts: all
   become: yes
   roles:
