@@ -12,10 +12,18 @@
   command: oc create secret generic datadog-secret --from-literal api-key=${{ dd_api_key_name }} --from-literal app-key=${{ dd_app_key_name }}
   tags: create_secret
 
+- name: Execute task only if file exists
+  stat:
+    path: "{{ home_user }}/{{ file_config_agent }}"
+  register: file_status
+  when: file_status.stat.exists
+
 - name: Download datadog file values.yaml
   get_url:
     url: "{{ url_file_values }}"
-    dest: /home/lab-user/
+    dest: "{{ home_user }}/"
+  register: file_status
+  when: not file_status.stat.exists
   tags: download_file
 
 - name: Install Datadog Agent
