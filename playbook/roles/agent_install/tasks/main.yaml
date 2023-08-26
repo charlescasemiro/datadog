@@ -15,13 +15,13 @@
 - name: Download datadog file values.yaml
   get_url:
     url: "{{ url_file_values }}"
-    dest: /tmp/values-clusteragent-full.yaml
+    dest: /home/lab-user/
   tags: download_file
 
 - name: Install Datadog Agent
   ansible.builtin.shell: | 
     helm install datadog-monitor \
-    -f /tmp/values-clusteragent-full.yaml \
+    -f /home/lab-user/values-clusteragent-full.yaml \
     --set targetSystem=linux \ 
     datadog/datadog
   tags: install_agent
