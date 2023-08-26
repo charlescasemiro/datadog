@@ -1,9 +1,8 @@
 ---
 - name: Add Helm Repository
-  community.kubernetes.helm_repository:
+  kubernetes.core.helm_repository:
     name: datadog
     repo_url: https://helm.datadoghq.com
-  #command: helm repo add '{{ helm_repository_name }}' '{{ helm_repository_url }}'
 
 - name: Update Helm
   ansible.builtin.shell: | 
