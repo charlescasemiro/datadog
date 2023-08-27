@@ -28,7 +28,7 @@
 
 - name: Install Datadog Agent
   ansible.builtin.shell: | 
-    helm install datadog \
+    helm install datadog-monitor \
     -f /home/lab-user/values-clusteragent-full.yaml \
     --set targetSystem=linux \ 
     datadog/datadog

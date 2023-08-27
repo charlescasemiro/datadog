@@ -4,11 +4,11 @@ helm_repository_url: https://helm.datadoghq.com
 
 # Datadog VARS
 dd_api_key_name: DD_API_KEY
-dd_api_key_value: 04f912b8fa61b4de2d8b9cbd5f676150
+dd_api_key_value: <API_KEY>
 dd_app_key_name: DD_APP_KEY
-dd_app_key_value: 4d4285949a224854898b41000f0fb5031add228e
+dd_app_key_value: <APP_KEY>
 
 # Configs Datadog Agent
 url_file_values: https://raw.githubusercontent.com/charlescasemiro/datadog/main/values-clusteragent-full.yaml
-home_user: /home/lab-user/
+home_user: <home_user>
 file_config_agent: values-clusteragent-full.yaml
