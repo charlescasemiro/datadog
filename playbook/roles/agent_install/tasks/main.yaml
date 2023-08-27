@@ -22,7 +22,7 @@
   ansible.builtin.file:
     path: "{{ home_user }}{{ file_config_agent }}"
     owner: lab-user
-    group: lab-user
+    group: users
     mode: '0644'
 
 - name: Install Datadog Agent
