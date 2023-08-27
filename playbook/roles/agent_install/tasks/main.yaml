@@ -3,7 +3,6 @@
   kubernetes.core.helm_repository:
     name: datadog
     repo_url: https://helm.datadoghq.com
-    ignore_errors: true
 
 - name: Update Helm
   ansible.builtin.shell: | 
