@@ -3,6 +3,7 @@
   kubernetes.core.helm_repository:
     name: datadog
     repo_url: https://helm.datadoghq.com
+    ignore_errors: true
 
 - name: Update Helm
   ansible.builtin.shell: | 
@@ -10,6 +11,7 @@
 
 - name: Create Secret
   command: oc create secret generic datadog-secret --from-literal api-key=${{ dd_api_key_name }} --from-literal app-key=${{ dd_app_key_name }}
+  ignore_errors: true
   tags: create_secret
 
 - name: Download datadog file values.yaml
@@ -31,4 +33,5 @@
     -f /home/lab-user/values-clusteragent-full.yaml \
     --set targetSystem=linux \ 
     datadog/datadog
+  ignore_errors: true
   tags: install_agent
