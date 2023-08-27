@@ -22,8 +22,8 @@
 - name: Change file ownership, group and permissions
   ansible.builtin.file:
     path: "{{ home_user }}{{ file_config_agent }}"
-    owner: lab-user
-    group: users
+    owner: "{{ user_agent }}"
+    group: "{{ group_agent }}"
     mode: '0644'
 
 - name: Install Datadog Agent
