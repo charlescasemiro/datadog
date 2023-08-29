@@ -1,8 +1,8 @@
 [OCP]
-bastion.rq85k.sandbox2708.opentlc.com
+bastion.4rbrn.sandbox305.opentlc.com
 
 [all:vars]
 ansible_connection=ssh
 ansible_ssh_user=lab-user
-ansible_ssh_pass=jPc2PxtGcFF6
+ansible_ssh_pass=SrO3OoriU2jw
 ansible_ssh_port=22
